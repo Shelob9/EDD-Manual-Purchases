@@ -411,6 +411,12 @@ class EDD_Manual_Purchases {
 
 	}
 
+	/**
+	 * Make a payment
+	 *
+	 * @param array $data Purchase data
+	 * @param WP_User $user User object
+	 */
 	public static function make_payment( $data, $user ) {
 		global $edd_options;
 
@@ -428,11 +434,6 @@ class EDD_Manual_Purchases {
 
 			)
 		);
-
-
-
-
-
 
 		$user_id 	= $user ? $user->ID : 0;
 		$email 		= $user ? $user->user_email : strip_tags( trim( $data['user'] ) );
